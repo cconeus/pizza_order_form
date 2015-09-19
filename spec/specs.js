@@ -1,6 +1,7 @@
-describe('Player', function() {
-    it("returns the player's mark", function() {
-      var testPlayer = new Player("X");
-      expect(testPlayer.mark()).to.equal("X");
-   });
-});
+describe('Contact', function() {
+  it("creates a new pizza order with the given specifications", function() {
+    var testContact = new Contact("Rita","Moreno");
+    expect(testContact.firstName).to.equal("Rita");
+    expect(testContact.lastName).to.equal("Moreno");
+    expect(testContact.addresses).to.eql([]);
+  });
