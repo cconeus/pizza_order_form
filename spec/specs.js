@@ -1,7 +1,8 @@
-describe('Contact', function() {
+describe('PizzaOrder', function() {
   it("creates a new pizza order with the given specifications", function() {
-    var testContact = new Contact("Rita","Moreno");
-    expect(testContact.firstName).to.equal("Rita");
-    expect(testContact.lastName).to.equal("Moreno");
-    expect(testContact.addresses).to.eql([]);
+    var testPizzaOrder = new PizzaOrder("medium", "1", "3");
+    expect(testPizzaOrder.pizzaSize).to.equal("medium");
+    expect(testPizzaOrder.pizzaToppings).to.equal("1");
+    expect(testPizzaOrder.quantity).to.eql("3");
   });
+});

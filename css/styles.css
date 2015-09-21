@@ -1,4 +1,10 @@
+body {
+    background-image: url('http://i.huffpost.com/gen/1554236/images/o-XBOX-PIZZA-HUT-facebook.jpg');
+}
+
 .pizzabox {
-    border: 1px dotted black;
-    background-color: #EBF5FF;
+    border: 1px solid black;
+    background: rgba(251, 253, 255, .4);
+    padding: 5px;
+    margin: 5px;
 }

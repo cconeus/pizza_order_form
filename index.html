@@ -18,20 +18,20 @@
       <div class="pizzabox">
       <form id="new-pizza">
         <div class="form-group">
-          <label for="pizzaSize">Select a size:</label>
+          <label for="pizza-size">Select a size:</label>
           <select class="newSize">
-            <option value="Medium">Medium</option>
-            <option value="Large">Large</option>
-            <option value="Family">Family</option>
+            <option value="Medium" id="medium">Medium</option>
+            <option value="Large" id="large">Large</option>
+            <option value="Family" id="family">Family</option>
           </select>
         </div>
         <div class="form-group">
-            <label for="pizzaToppings">Select your toppings:</label><br>
-            <label><input type="checkbox" name="mushrooms" value="1" /> mushrooms</label>
-            <label><input type="checkbox" name="onions" value="1" /> onions</label>
-            <label><input type="checkbox" name="black_olives" value="1" /> black olives</label>
-            <label><input type="checkbox" name="sausage" value="1" /> sausage</label>
-            <label><input type="checkbox" name="pepperoni" value="1" /> pepperoni</label>
+            <label for="pizza-toppings">Select your toppings:</label><br>
+            <label><input type="checkbox" name="mushrooms" value="1" id="mushroom"/> mushrooms</label>
+            <label><input type="checkbox" name="onions" value="1" id="onion"/> onions</label>
+            <label><input type="checkbox" name="black_olives" value="1" id="black_olives"/> black olives</label>
+            <label><input type="checkbox" name="sausage" value="1" id="sausage"/> sausage</label>
+            <label><input type="checkbox" name="pepperoni" value="1" id="pepperoni"/> pepperoni</label>
         </div>
 
         <div class="form-group">
@@ -58,19 +58,20 @@
 
     <div class="col-md-6">
         <h2>Your order information:</h2>
-        <ul id="contacts">
+        <div class="pizzabox">
+            <ul id="show-pizza">
+            </ul>
+            <div id="show-order">
+                <h2></h2>
 
-        </ul>
-      <div id="show-order">
-        <h2></h2>
+                <p>Pizza size: <span class="pizza-size"></span></p>
+                <p>Toppings: <span class="pizza-toppings"></span></p>
+                <p>Quantity:<span class="quantity"></span></p>
+                <ul id="addresses">
 
-        <p>First name: <span class="first-name"></span></p>
-        <p>Last name: <span class="last-name"></span></p>
-        <p>Addresses:</p>
-        <ul id="addresses">
-
-        </ul>
-      </div>
+            </ul>
+            </div>
+        </div>
     </div>
   </div>
 </div>
