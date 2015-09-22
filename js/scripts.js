@@ -2,15 +2,11 @@ function PizzaOrder(pizzaSize, pizzaToppings, quantity) {
     debugger;
     this.pizzaSize = pizzaSize,
     this.pizzaToppings = [],
-    this.quantity = []
+    this.quantity = ""
 };
 
 function PizzaToppings(mushroom, onion, black_olives, sausage, pepperoni) {
-    mushroom: 1,
-    onion: 1,
-    black_olives: 1,
-    sausage: 1.5,
-    pepperoni: 1.5
+
 }
 
 $(document).ready(function() {
@@ -59,10 +55,12 @@ $(document).ready(function() {
         var sausage = $("input[name='sausage']:checked").val();
         var pepperoni = $("input[name='pepperoni']:checked").val();
 
-        var newPizzaOrder = new PizzaOrder(inputtedPizzaSize, inputtedPizzaToppings, inputtedQuantity);
-        var inputtedPizzaToppings = $("input[name='onions']:checked").val();
+        var newPizzaOrder = new PizzaOrder(inputtedPizzaSize, newPizzaToppings, inputtedQuantity);
+
+        var newPizzaToppings = new PizzaToppings(mushroom, onion, black_olives, sausage, pepperoni);
+        console.log(newPizzaToppings);
     });
-    $("ul#show-pizza").append("<li><span class='order'" + newPizzaOrder.pizzaToppings() + "</span></li>");
+    // $("ul#show-pizza").append("<li><span class='order'" + newPizzaOrder.pizzaToppings() + "</span></li>");
 
     $(".order").last().show(function() {
         $("#show-pizza").fadeIn(500);
