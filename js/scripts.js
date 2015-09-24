@@ -1,8 +1,8 @@
 function PizzaOrder(pizzaSize, pizzaToppings, quantity) {
-  debugger;
-  this.pizzaSize = pizzaSize,
-  this.pizzaToppings = [],
-  this.quantity = ""
+  // debugger;
+  this.pizzaSize = pizzaSize;
+  this.pizzaToppings = pizzaToppings;
+  this.quantity = quantity;
 };
 
 function PizzaToppings(mushroom, onion, black_olives, sausage, pepperoni) {
@@ -47,32 +47,30 @@ $(document).ready(function() {
   $("form#new-pizza").submit(function(event) {
     event.preventDefault();
 
-    var inputtedPizzaSize = $("input#new-size").val();
-    var inputtedQuantity = $("input#quantity").val();
-    var mushroom = $("input[name='mushroom']:checked").val();
-    var onion = $("input#onion").val();
-//example of check validation
-        if ($('#onion').is(':checked')){
-        alert('YAY!');
-    };
+    var inputtedPizzaSize = $("select#newSize").val();
+    console.log(inputtedPizzaSize);
+    var inputtedQuantity = parseInt($("select#quantity").val());
+    console.log(inputtedQuantity);
+//     var mushroom = $("input[name='mushroom']:checked").val();
+//     var onion = $("input#onion").val();
+// //example of check validation
+//         if ($('#onion').is(':checked')){
+//         alert('YAY!');
+//     };
+//     var black_olives = $("input[name='black_olives']:checked").val();
+//     var sausage = $("input[name='sausage']:checked").val();
+//     var pepperoni = $("input[name='pepperoni']:checked").val();
 
-    console.log(onion);
-    var black_olives = $("input[name='black_olives']:checked").val();
-    var sausage = $("input[name='sausage']:checked").val();
-    var pepperoni = $("input[name='pepperoni']:checked").val();
-
-    var newPizzaOrder = new PizzaOrder(inputtedPizzaSize, newPizzaToppings, inputtedQuantity);
-
+    var newPizzaOrder = new PizzaOrder(inputtedPizzaSize, "Pepperoni", inputtedQuantity);
     var newPizzaToppings = new PizzaToppings(mushroom, onion, black_olives, sausage, pepperoni);
-    console.log(newPizzaToppings);
-    $(".order").last().show(function() {
-      $("#show-pizza").fadeIn(500);
+    // $(".order").last().show(function() {
+    // $("#show-pizza").fadeIn(500);
 
-      $("#show-order h2").text(newPizzaOrder.pizzaSize);
-      $("#pizza-size").text(newPizzaOrder.pizzaSize);
-      $("#pizza-toppings").text(newPizzaOrder.pizzaToppings);
-      $("#quantity").text(newPizzaOrder.quantity);
-    })
+    $("#pizza-size").text(newPizzaOrder.pizzaSize);
+    $("#pizza-toppings").text(newPizzaOrder.pizzaToppings);
+          console.log("Quantity is " + newPizzaOrder.quantity);
+    $("#final-amount").text(newPizzaOrder.quantity);
+    // })
   });
   // $("ul#show-pizza").append("<li><span class='order'" + newPizzaOrder.pizzaToppings() + "</span></li>");
 
